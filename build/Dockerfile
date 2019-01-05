@@ -25,7 +25,7 @@ ENV CLUSTER_PATH ${CLUSTER_PATH:-"/var/lib/dsta/cluster"}
 
 # Set environment variables.
 ENV DESCRIPTION="Powered by DST Academy." \
-	SERVER_PORT="10999" \
+	SERVER_PORT="$PORT" \
 	SHARD_NAME=shard \
 	SHARD_BIND_IP="0.0.0.0" \
 	BACKUP_LOG_COUNT=0
@@ -87,4 +87,4 @@ VOLUME ["$CLUSTER_PATH"]
 
 # Set entrypoint and default command.
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["dst-server", "start"]
+CMD ["dst-server", "start --update=all"]

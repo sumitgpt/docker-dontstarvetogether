@@ -1,0 +1,5 @@
+build:
+  docker:
+    worker: build/Dockerfile
+run:
+  worker: dst-server start --update=all
